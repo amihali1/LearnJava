@@ -14,7 +14,15 @@ public class HelloWorld {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        var helloWorld = "Hello World";
+        System.out.println(helloWorld);        
+        System.out.println("\'%s\' is %d characters long...".formatted(helloWorld, helloWorld.length()));
+        var helloSubstring = helloWorld.substring(0, 5);
+        var worldSubstring = helloWorld.substring(6);
+        
+        System.out.println("%s %s".formatted(helloSubstring, worldSubstring));
+        
+        
     }
     
 }
