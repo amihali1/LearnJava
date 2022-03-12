@@ -16,17 +16,22 @@ public class ObjectOrientedDemo
      */
     public static void main(String[] args)
     {
-        var staff1 = new Staff("Peter");        
+        var staffPeter = new Staff("Peter");        
         
-        staff1.setHoursWorked(160);
-        var staff1Pay = staff1.calculatePay(1000,400);
+        staffPeter.setHoursWorked(160);
+        var staff1Pay = staffPeter.calculatePay(1000,400);
         
         System.out.printf("Pay = %d\n", staff1Pay);
         
-        var staff2 = new Staff ("Jane", "Lee");                
+        var staffJane = new Staff ("Jane", "Lee");                
 
-        staff2.setHoursWorked(180);                
-        var staff2Pay = staff2.calculatePay(1000,500);
+        staffJane.setHoursWorked(180);                
+        
+        System.out.printf("\n\nUpdating Jane's Hours Worked to -10\n");
+        staffJane.setHoursWorked(-10);
+        System.out.printf("\nHours Worked = %d\n", staffJane.getHoursWorked());
+        
+        var staff2Pay = staffJane.calculatePay(1000,500);
         
         System.out.printf("Pay = %d\n", staff2Pay);
         
