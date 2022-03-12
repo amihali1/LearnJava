@@ -21,6 +21,13 @@ public class Staff
         printMessage("----------------------------");
     }
     
+    public Staff(String firstName, String lastName)
+    {
+        nameOfStaff = firstName + " " + lastName;
+        printMessage("\n%s".formatted(nameOfStaff));
+        printMessage("----------------------------");
+    }
+    
     public void setHoursWorked(int hours)
     {
         if (hours > 0)
