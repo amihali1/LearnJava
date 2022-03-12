@@ -21,6 +21,7 @@ public class MutableVsImmutable
         
         //String is immutable
         String warriorWeapon = "Sword ";
+        
         changeWarriorClass(warriorProfession, warriorWeapon);
 
         //warriorWeapon is not updated from changeWarriorClass because String is immutable
