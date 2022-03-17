@@ -19,6 +19,16 @@ public class FileHandlingDemo
     {
         String line;
         
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("myFile.txt", false)))
+        {
+            line = "Written Words\n";
+            writer.write(line);            
+        } 
+        catch (IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
         try (BufferedReader reader = new BufferedReader(new FileReader("myFile.txt")))
         {
             line = reader.readLine();
