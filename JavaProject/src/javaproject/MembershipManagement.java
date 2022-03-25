@@ -22,6 +22,7 @@ public class MembershipManagement
         try
         {
             value = reader.nextInt();
+            reader.nextLine();
         } 
         catch (Exception e)
         {
