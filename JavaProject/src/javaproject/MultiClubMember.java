@@ -8,7 +8,31 @@ package javaproject;
  *
  * @author rvc
  */
-public class MultiClubMember
+public class MultiClubMember extends Member
 {
+    private int membershipPoints;
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", " + membershipPoints;
+    }
+
+    public int getMembershipPoints()
+    {
+        return membershipPoints;
+    }
+
+    public void setMembershipPoints(int membershipPoints)
+    {
+        this.membershipPoints = membershipPoints;
+    }
+
+    public MultiClubMember(int membershipPoints, char pMemberType, int pMemberId, String pName, double pFees)
+    {
+        super(pMemberType, pMemberId, pName, pFees);
+        this.membershipPoints = membershipPoints;
+    }
+    
     
 }
