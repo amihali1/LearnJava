@@ -47,14 +47,44 @@ public class FileHandler
         }
         return members;
     }
-//    
-//    pubcic void appendFile()
-//    {
-//        
-//    }
-//    
-//    public void overWriteFile()
-//    {
-//        
-//    }
+    
+    public void appendFile(String member)
+    {        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("members.csv", true)))
+        {
+            writer.write(member + "\n");
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error writing to members.csv. " + e.toString());
+        }
+    }
+    
+    public void overWriteFile(LinkedList<Member> members)
+    {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("members.temp", false)))
+        {
+            for (var member : members)
+            {
+                writer.write(member.toString() + "\n");
+            }            
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error writing to members.temp. " + e.toString());
+        }
+        
+        try 
+        {
+            File file = new File("members.csv");
+            File tempFile = new File("members.temp");
+            
+            file.delete();
+            tempFile.renameTo(new File("members.csv"));            
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error writing to members.csv. " + e.toString());
+        }
+    }
 }
