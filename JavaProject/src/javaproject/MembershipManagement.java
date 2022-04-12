@@ -122,4 +122,29 @@ public class MembershipManagement
         }
         System.out.println("Member ID " + memberId + " not found.");
     }
+    
+    public void printMemberInfo(LinkedList<Member> members)
+    {
+        for (int i = 0; i < members.size(); i++)
+        {
+            var memberInfo = members.get(i).toString().split(",");
+            
+            if (memberInfo[0].equals('S'))
+            {
+                System.out.println("Member type = " + memberInfo[0]);
+                System.out.println("Member ID   = " + memberInfo[1]);
+                System.out.println("Member Name = " + memberInfo[2]);
+                System.out.println("Member Fees = " + memberInfo[3]);
+                System.out.println("Club ID     = " + memberInfo[4]);
+            }
+            else if (memberInfo[0].equals('M'))
+            {
+                System.out.println("Member type   = " + memberInfo[0]);
+                System.out.println("Member ID     = " + memberInfo[1]);
+                System.out.println("Member Name   = " + memberInfo[2]);
+                System.out.println("Member Fees   = " + memberInfo[3]);
+                System.out.println("Member Points = " + memberInfo[4]);                
+            }
+        }
+    }
 }
