@@ -17,8 +17,7 @@ public class MembershipManagement
     
     private int getIntInput()
     {
-        int value = 0;
-        System.out.println("Enter an integer value:");
+        int value = 0;        
         
         while (value == 0)
         {
@@ -34,6 +33,7 @@ public class MembershipManagement
             catch (Exception e)
             {
                 System.out.println("Error: You did not enter an integer. Please try again:");
+                reader.nextLine();
             }
         }
         return value;         
@@ -44,7 +44,7 @@ public class MembershipManagement
         System.out.println("1) Club Mercury\n2) Club Neptune\n3) Club Jupiter\n4) Multi Clubs");
     }
     
-    private int getChoice()
+    int getChoice()
     {        
         System.out.println("WELCOME TO OZONE FITNESS CENTER");
         System.out.println("===============================");
@@ -127,9 +127,9 @@ public class MembershipManagement
     {
         for (int i = 0; i < members.size(); i++)
         {
-            var memberInfo = members.get(i).toString().split(",");
+            var memberInfo = members.get(i).toString().split(", ");
             
-            if (memberInfo[0].equals('S'))
+            if (memberInfo[0].equals("S"))
             {
                 System.out.println("Member type = " + memberInfo[0]);
                 System.out.println("Member ID   = " + memberInfo[1]);
@@ -137,7 +137,7 @@ public class MembershipManagement
                 System.out.println("Member Fees = " + memberInfo[3]);
                 System.out.println("Club ID     = " + memberInfo[4]);
             }
-            else if (memberInfo[0].equals('M'))
+            else if (memberInfo[0].equals("M"))
             {
                 System.out.println("Member type   = " + memberInfo[0]);
                 System.out.println("Member ID     = " + memberInfo[1]);

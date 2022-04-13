@@ -32,12 +32,11 @@ public class FileHandler
                 {
                     members.add(new SingleClubMember(splitLine[0].charAt(0), Integer.parseInt(splitLine[1]), splitLine[2], Double.parseDouble(splitLine[3]), Integer.parseInt(splitLine[4])));
                 }
-                else if (splitLine[0].equals("S"))
+                else if (splitLine[0].equals("M"))
                 {
                     members.add(new MultiClubMember(splitLine[0].charAt(0), Integer.parseInt(splitLine[1]), splitLine[2], Double.parseDouble(splitLine[3]), Integer.parseInt(splitLine[4])));
-                }
-                
-                lineRead =reader.readLine();
+                }         
+                lineRead =reader.readLine();   
                 i++;
             }
         }   
